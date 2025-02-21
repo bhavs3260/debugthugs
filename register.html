@@ -1,1 +1,143 @@
-currently in development phase :)
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Registration Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #8e2de2, #4a00e0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transform: scale(0.95);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #8e2de2;
+            font-size: 30px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            color: #777;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #8e2de2;
+            outline: none;
+        }
+
+        .register-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #8e2de2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .register-btn:hover {
+            background-color: #4a00e0;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        .footer-text a {
+            color: #8e2de2;
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-container">
+        <h1>Create Account</h1>
+        <p>Join us today and be part of our amazing community!</p>
+
+        <form onsubmit="return validateForm()">
+            <input type="text" id="full-name" class="input-field" placeholder="Full Name" required><br>
+            <input type="email" id="email" class="input-field" placeholder="Email ID" required><br>
+            <input type="text" id="username" class="input-field" placeholder="Username" required><br>
+            <input type="password" id="password" class="input-field" placeholder="Password" required><br>
+
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+
+        <div class="footer-text">
+            Already have an account? <a href="#">Login here</a>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (fullName === '' || email === '' || username === '' || password === '') {
+                alert('Please fill in all the fields');
+                return false;
+            }
+
+            alert('Registration successful! Welcome aboard!');
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
